@@ -1,60 +1,49 @@
 # 💼 Employee Salary Predictor
 
-A machine learning web application built with Streamlit that predicts whether an individual's salary is **above or below $50K** based on demographic and employment features.  
-
-This project uses classification models trained on the **Adult Income dataset** (also known as the "Census Income" dataset) from the UCI Machine Learning Repository.
+A machine learning web app built with **Streamlit** to predict whether an individual's income is **greater than 50K** or not, based on their demographic and employment features.
 
 ---
 
-## 🚀 Demo
+## 🌐 Live App (Local Network)
 
-![App Screenshot]("C:\Users\lenovo\OneDrive\Desktop\employee-salary-predictor\{F0CBB6DC-2476-4010-97C3-6D4B87D62FDF}.png") <!-- Optional: Replace with a real screenshot if needed -->
-
----
-
-## 📦 Features
-
-- Predicts whether a person earns `>50K` or `<=50K`
-- Clean and modern UI built with Streamlit
-- Preprocessing and feature encoding handled in the backend
-- Quick test examples for high-income and low-income profiles
-- Displays prediction probabilities and input summary
+👉 [Click here to open the app](http://192.168.58.201:8501/)  
+📌 Note: This link works only on the same local network as the host.
 
 ---
 
-## 🧠 Model Details
+## 🚀 Features
 
-- **Dataset**: [UCI Adult Dataset](https://archive.ics.uci.edu/ml/datasets/adult)
-- **Model Used**: K-Nearest Neighbors (can be replaced with any classifier)
-- **Input Features**:
-  - Age
-  - Workclass
-  - Education
-  - Marital Status
-  - Occupation
-  - Relationship
-  - Race
-  - Gender
-  - Hours per week
-  - Native country
-  - Capital gain / loss
-  - FNLWGT
+- ✅ Predicts if income is >50K or ≤50K
+- 🔍 Inputs include age, education, workclass, marital status, hours/week, etc.
+- 📊 Built-in examples for testing
+- 🎯 Displays prediction result and probabilities
+- 🧠 Model trained using **Random Forest Classifier**
 
 ---
 
-## 🛠️ Tech Stack
+## 🧠 System Overview
 
-| Tool         | Description                   |
-|--------------|-------------------------------|
-| Python       | Core programming language     |
-| Streamlit    | Web framework for ML apps     |
-| Pandas       | Data handling                 |
-| Joblib       | Model loading                 |
-| Scikit-learn | ML modeling (KNN)             |
+### 🔹 Dataset Used
+- [UCI Adult Income Dataset](https://archive.ics.uci.edu/ml/datasets/adult)
+
+### 🔹 ML Pipeline
+1. **Preprocessing**:
+   - Handling missing values
+   - Label encoding for categorical data
+2. **Model**:
+   - Random Forest Classifier
+   - Trained on 80/20 train-test split
+3. **Deployment**:
+   - Model saved as `salary_predictor_model.pkl` using `joblib`
+   - UI built with Streamlit and launched via:
+     ```bash
+     streamlit run employee_salary_app.py
+     ```
 
 ---
 
-## 📁 File Structure
+## 🗂️ File Structure
+
 -📦 employee-salary-predictor/
 
 ~ employee_salary_app.py # 💻 Streamlit web app
@@ -69,15 +58,45 @@ This project uses classification models trained on the **Adult Income dataset** 
 
 
 
-📌 To-Do Suggestions
- 🔄 Add option to upload CSV files for batch predictions
- 📈 Show feature importance using SHAP or LIME
- 🌙 Add light/dark mode toggle
- 🚀 Deploy to Hugging Face Spaces or Render
- 🗃️ Log predictions into a local CSV or database
- 🧪 Add support for multiple ML models (RandomForest, Logistic, XGBoost)
 
+---
 
- 📄 License
-This project is licensed under the MIT License
-© 2025 [K.srikar Datta]
+## 🧪 Sample Use Case
+
+| Feature            | Value               |
+|--------------------|---------------------|
+| Age                | 38                  |
+| Education          | Masters             |
+| Occupation         | Exec-manager        |
+| Hours-per-week     | 45                  |
+| Marital Status     | Married             |
+
+🔮 **Prediction**: Income >50K  
+📈 **Confidence**: 85.6%
+
+---
+
+## 📌 To-Do Improvements
+
+- [ ] CSV batch upload support
+- [ ] Deploy to public cloud (Streamlit Cloud, Hugging Face)
+- [ ] Add feature importance visualizations
+- [ ] Add user session logging
+- [ ] Include SHAP or LIME explanations
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**  
+© 2025 Srikar Datta
+
+---
+
+## 🙌 References
+
+- [UCI Adult Dataset](https://archive.ics.uci.edu/ml/datasets/adult)
+- [Scikit-learn Documentation](https://scikit-learn.org/)
+- [Streamlit Docs](https://docs.streamlit.io/)
+- [Joblib Docs](https://joblib.readthedocs.io/)
+
